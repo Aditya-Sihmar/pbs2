@@ -16,6 +16,15 @@ const routes: Routes = [
     path: 'forgot-password',
     loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
+  {
+    path: 'choose-option',
+    loadChildren: () => import('./choose-option/choose-option.module').then( m => m.ChooseOptionPageModule)
+  },
+  {
+    path: 'upload-file',
+    loadChildren: () => import('./upload-file/upload-file.module').then( m => m.UploadFilePageModule)
+  },
+
 ];
 
 @NgModule({
