@@ -23,7 +23,15 @@ const routes: Routes = [
   {
     path: 'upload-file',
     loadChildren: () => import('./upload-file/upload-file.module').then( m => m.UploadFilePageModule)
+  },  {
+    path: 'image-generation',
+    loadChildren: () => import('./image-generation/image-generation.module').then( m => m.ImageGenerationPageModule)
   },
+  {
+    path: 'edit-image',
+    loadChildren: () => import('./edit-image/edit-image.module').then( m => m.EditImagePageModule)
+  },
+
 
 ];
 

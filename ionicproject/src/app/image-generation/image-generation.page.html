@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  
+    <ion-title>
+      Portrait Gen
+      <ion-icon name="contact" style="float:right"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+  
+    <img src="logo.png" alt="Generated Image">
+
+    <div class="leftover"></div>
+
+    <ion-button  expand="block" href="#">Save Image</ion-button>    
+    <ion-button [routerLink]="['/edit-image']" expand="block" >Edit</ion-button>    
+    <ion-button expand="block" href="#">New Generation</ion-button>    
+
+
+  </div>
+</ion-content>
