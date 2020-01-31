@@ -3,7 +3,9 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  { path: 'home',
+  loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -23,7 +25,8 @@ const routes: Routes = [
   {
     path: 'upload-file',
     loadChildren: () => import('./upload-file/upload-file.module').then( m => m.UploadFilePageModule)
-  },  {
+  },
+  {
     path: 'image-generation',
     loadChildren: () => import('./image-generation/image-generation.module').then( m => m.ImageGenerationPageModule)
   },
