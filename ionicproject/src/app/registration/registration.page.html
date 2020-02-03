@@ -11,27 +11,27 @@
   <form>
     <ion-item lines="full">
       <ion-label position="floating">First name</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input [(ngModel)]="user.firstName" name="first" type="text" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Last name</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input [(ngModel)]="user.lastName" name="last" type="text" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input [(ngModel)]="user.email" name="mail" type="text" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input [(ngModel)]="user.password" name="password" type="password" required></ion-input>
     </ion-item>
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Sign Up</ion-button>
+        <ion-button type="submit" (click)="createAccount()" color="danger" expand="block">Sign Up</ion-button>
       </ion-col>
     </ion-row>
   </form>
