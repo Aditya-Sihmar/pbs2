@@ -1,6 +1,8 @@
 # pbs2
 portrait building software using criminal data-set
 
+### How to get the app running locally
+
 
 ### How to use "creating_test_images.py" script
 1. copy the file to any location other than this git repo
