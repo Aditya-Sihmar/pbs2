@@ -18,16 +18,17 @@ import * as firebase from 'firebase';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
+    BrowserModule, 
+    IonicModule.forRoot(), 
     AppRoutingModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
-    // AngularFireModule.initializeApp(environment.firebase),
+
   ],
   providers: [
     StatusBar,
