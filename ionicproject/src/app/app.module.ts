@@ -17,7 +17,7 @@ import { environment } from '../environments/environment';
 import * as firebase from 'firebase';
 import { ReactiveFormsModule } from '@angular/forms';
 
-firebase.initializeApp(environment.firebase);
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +28,7 @@ firebase.initializeApp(environment.firebase);
     AppRoutingModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
-    //AngularFireModule.initializeApp(environment.firebase),
+
   ],
   providers: [
     StatusBar,
