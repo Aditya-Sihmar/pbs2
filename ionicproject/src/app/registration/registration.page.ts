@@ -1,40 +1,66 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-// import { TestBed } from '@angular/core/testing';
-
-interface User {
-  firstName: string,
-  lastName: string,
-  email?: string;
-  password?: string;
-}
-
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { AuthenticationService } from '../services/authentication.service';
+import { NavController } from '@ionic/angular';
+ 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.page.html',
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
-
-  user: User = {
-    firstName: 'abc',
-    lastName: 'xyz',
-    email: 'test@test.com',
-    password: 'test1234',
-  };
-
-  constructor(public afAuth: AngularFireAuth) { }
-
-  ngOnInit() {
+ 
+ 
+  validations_form: FormGroup;
+  errorMessage: string = '';
+  successMessage: string = '';
+ 
+  validation_messages = {
+   'email': [
+     { type: 'required', message: 'Email is required.' },
+     { type: 'pattern', message: 'Enter a valid email.' }
+   ],
+   'password': [
+     { type: 'required', message: 'Password is required.' },
+     { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+   ]
+ };
+ 
+  constructor(
+    private navCtrl: NavController,
+    private authService: AuthenticationService,
+    private formBuilder: FormBuilder
+  ) {}
+ 
+  ngOnInit(){
+    this.validations_form = this.formBuilder.group({
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ])),
+      password: new FormControl('', Validators.compose([
+        Validators.minLength(5),
+        Validators.required
+      ])),
+    });
   }
-
-  async createAccount() {
-    const user = await this.afAuth.auth.createUserWithEmailAndPassword(
-      this.user.email,
-      this.user.password,
-    );
-
-    console.log(user);
+ 
+  tryRegister(value){
+    this.authService.registerUser(value)
+     .then(res => {
+       console.log(res);
+       this.errorMessage = "";
+       this.successMessage = "Your account has been created. Please log in.";
+     }, err => {
+       console.log(err);
+       this.errorMessage = err.message;
+       this.successMessage = "";
+     })
   }
-
+ 
+  goLoginPage(){
+    this.navCtrl.navigateBack('');
+  }
+ 
+ 
 }
