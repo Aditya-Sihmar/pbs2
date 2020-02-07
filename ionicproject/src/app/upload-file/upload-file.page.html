@@ -4,11 +4,23 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Upload File</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentPopover($ev)">
+        <ion-icon name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<ion-button >Upload Image</ion-button>
+<ion-content class="one">
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+<ion-button  expand="block" color="tertiary" >Upload Image</ion-button>
 
-<ion-button [routerLink]="['/image-generation']">Generate</ion-button>
+<ion-button  expand="block" color="tertiary" [routerLink]="['/image-generation']">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

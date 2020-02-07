@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { AuthenticationService } from '../services/authentication.service';
 
+import { PopoverController } from '@ionic/angular';
+import { PopoverComponent } from '../popover/popover.component';
+
 @Component({
   selector: 'app-choose-option',
   templateUrl: './choose-option.page.html',
@@ -12,8 +15,9 @@ export class ChooseOptionPage implements OnInit {
   userEmail: string;
  
   constructor(
-    private navCtrl: NavController,
-    private authService: AuthenticationService
+    public navCtrl: NavController,
+    public authService: AuthenticationService,
+    public popoverController: PopoverController
   ) {}
  
   ngOnInit(){
@@ -35,4 +39,13 @@ export class ChooseOptionPage implements OnInit {
       console.log(error);
     })
   }
+
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopoverComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+}
 }

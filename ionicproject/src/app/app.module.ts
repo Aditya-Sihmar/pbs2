@@ -16,11 +16,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import * as firebase from 'firebase';
 import { ReactiveFormsModule } from '@angular/forms';
+//import { PopoverComponent } from './popover/popover.component';
 
 firebase.initializeApp(environment.firebase);
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,],
   entryComponents: [],
   imports: [
     BrowserModule, 
@@ -28,7 +29,8 @@ firebase.initializeApp(environment.firebase);
     AppRoutingModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
-    //AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase),
+
   ],
   providers: [
     StatusBar,

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ImageGenerationPageRoutingModule } from './image-generation-routing.module';
 
 import { ImageGenerationPage } from './image-generation.page';
-
+//import { PopoverComponent } from '../popover/popover.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,8 @@ import { ImageGenerationPage } from './image-generation.page';
     IonicModule,
     ImageGenerationPageRoutingModule
   ],
-  declarations: [ImageGenerationPage]
+  //entryComponents:[PopoverComponent],
+  declarations: [ImageGenerationPage,//PopoverComponent]
+  ]
 })
 export class ImageGenerationPageModule {}

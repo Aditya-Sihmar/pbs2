@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ForgotPasswordPageRoutingModule } from './forgot-password-routing.module';
 
 import { ForgotPasswordPage } from './forgot-password.page';
-
+//import { PopoverComponent } from '../popover/popover.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,8 @@ import { ForgotPasswordPage } from './forgot-password.page';
     IonicModule,
     ForgotPasswordPageRoutingModule
   ],
-  declarations: [ForgotPasswordPage]
+  //entryComponents:[PopoverComponent],
+  declarations: [ForgotPasswordPage,//PopoverComponent]
+]
 })
 export class ForgotPasswordPageModule {}

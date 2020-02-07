@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { UploadFilePageRoutingModule } from './upload-file-routing.module';
 
 import { UploadFilePage } from './upload-file.page';
-
+//import { PopoverComponent } from '../popover/popover.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,9 @@ import { UploadFilePage } from './upload-file.page';
     IonicModule,
     UploadFilePageRoutingModule
   ],
-  declarations: [UploadFilePage]
+  //entryComponents:[PopoverComponent],
+  declarations: [UploadFilePage,//PopoverComponent
+  ]
+
 })
 export class UploadFilePageModule {}

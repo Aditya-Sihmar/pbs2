@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { EditImagePageRoutingModule } from './edit-image-routing.module';
 
 import { EditImagePage } from './edit-image.page';
+//import { PopoverComponent } from '../popover/popover.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,8 @@ import { EditImagePage } from './edit-image.page';
     IonicModule,
     EditImagePageRoutingModule
   ],
-  declarations: [EditImagePage]
+  //entryComponents:[PopoverComponent],
+  declarations: [EditImagePage,//PopoverComponent]
+]
 })
 export class EditImagePageModule {}

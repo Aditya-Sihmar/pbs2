@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SuspectDescPageRoutingModule } from './suspect-desc-routing.module';
 
 import { SuspectDescPage } from './suspect-desc.page';
-
+//import { PopoverComponent } from '../popover/popover.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,8 @@ import { SuspectDescPage } from './suspect-desc.page';
     IonicModule,
     SuspectDescPageRoutingModule
   ],
-  declarations: [SuspectDescPage]
+  //entryComponents:[PopoverComponent],
+  declarations: [SuspectDescPage,//PopoverComponent]
+]
 })
 export class SuspectDescPageModule {}
