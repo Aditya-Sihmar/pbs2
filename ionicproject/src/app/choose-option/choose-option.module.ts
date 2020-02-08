@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ChooseOptionPageRoutingModule } from './choose-option-routing.module';
 
 import { ChooseOptionPage } from './choose-option.page';
+import { PopoverComponent } from '../popover/popover.component';
+
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { ChooseOptionPage } from './choose-option.page';
     IonicModule,
     ChooseOptionPageRoutingModule
   ],
-  declarations: [ChooseOptionPage]
-})
+  entryComponents:[PopoverComponent],
+  declarations: [ChooseOptionPage,PopoverComponent]})
 export class ChooseOptionPageModule {}
